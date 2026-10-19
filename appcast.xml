@@ -4,25 +4,28 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.0.2</title>
-            <pubDate>Mon, 19 Oct 2026 10:30:19 -0500</pubDate>
+            <title>1.0.3</title>
+            <pubDate>Mon, 19 Oct 2026 12:18:17 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>3</sparkle:version>
-            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Changed
-- **Permissive** now inspects SSL on risky sites only: what it blocks or cautions, and file hosting sites, where malware is downloaded from. Its caution pages, Sandbox and antivirus work there, and it has Credentials and credit card DLP rules for that traffic. Everything else stays uninspected, and endpoints need the Zscaler root certificate.
-- **Every tier above Permissive** blocks, cautions and inspects at least what Permissive does. Balanced and Strict now include the credit card DLP rule with every framework.
-- **New: URL & Cloud App Settings** in every tier: the new domain lookup that the newly registered and revived domain rules need, AI/ML categorization of unknown sites, and URL Filtering for translated pages.
-- **Customize asks two questions:** "Do you use Microsoft 365?" adds Microsoft's recommended Office 365 One Click configuration, and "Enforce SafeSearch?" adds SafeSearch, in every tier. With SafeSearch, Permissive also inspects search engines, since SafeSearch needs it.
-- **Malware Protection** inspects FTP in every tier, as Zscaler recommends.
-- **Advanced Threat Protection** is its own group, following Zscaler's recommended policy: a Page Risk of 35 in Balanced (25 in Strict and ZTH Ebook, 50 in Permissive), alerts for unknown or suspicious command-and-control traffic, and WPAD blocked.
-- **Apply now sets the tenant-wide settings** (Malware Protection, Advanced Threat Protection, Advanced Settings, URL & Cloud App Settings), which used to be steps to do by hand. They have their own section on Customize, since they always apply to everyone in the tenant. The dry run lists only the settings that differ, each as the tenant's value → the new one by the portal's own names; Apply changes only those, and Undo puts the old values back unless someone has changed them since. WPAD Protocol, which the API can't set, stays a step to do by hand. A setting the portal doesn't have is gone.
+            <description sparkle:format="markdown"><![CDATA[### Added
+- **Help: how the tiers compare.** The Security Tier article has a chart of what Strict, Balanced, Permissive and ZTH Ebook each do: site categories, SSL inspection, firewall, executables, file sharing and webmail, AI apps and DLP.
+- **Help: ↑ and ↓** move through the articles, or through the search results while you search, even with the cursor in the search box.
+- **New compliance frameworks:**
+  - **CMMC Level 1:** the basic safeguarding of Federal Contract Information (FAR 52.204-21).
+  - **CIPA**, for K-12 schools and libraries: it also turns on SafeSearch and ZIA's CIPA Compliance rule.
+  - **ISO/IEC 27001:2022**, **SOC 2** and **CIS Controls v8.1**.
+- **Every framework's controls reviewed:** a rule now maps to a control only when it really helps meet it. Mappings that over-claimed are gone (for example PCI DSS 6.4, and content filtering under FERPA), closer matches are added, and the Compliance Evidence says it shows configuration, not certification.
+
+### Changed
+- **Help is up to date** with 1.0.1 and 1.0.2: Apply setting the tenant-wide settings and Undo putting them back, the dry run's UPDATE rows, Microsoft 365 and SafeSearch, Permissive's inspection, and a reminder that tenant-wide settings apply to everyone even when the rules are for a pilot group.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0.2/Zscaler-Policy-Wizard-1.0.2.dmg" length="8746386" type="application/octet-stream" sparkle:edSignature="TtzomHmDXnSZTaAYWQUW2sHeZZMHrvqruDNRqz+IJsWaAJHA0GuFOcyjU2QDJdsvg1WnTA4clhqFUjaQRIonBA=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0.3/Zscaler-Policy-Wizard-1.0.3.dmg" length="8831770" type="application/octet-stream" sparkle:edSignature="I6Ix3tdk0A8wwK80Y3ZsFJhyEf/gvL1cjn11unXiK1VeM2MYxrWD0PJXloiOGs/4uocGFfEY5SKTeh5McM35DA=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: zGSI9rOi+2odag4qQeFsFA+7AUf4LWwiAL9iwD3VeGm+Fjxbuj6x8u/0Z7OGdlgSofdfVCnxYEyS3Y/5aFtLBw==
-length: 3211
+edSignature: s5JDzBGIPM+XhmcYo1IXYaHd/FwGKxoV89o9fvQyf/bBpxcH7Xsd0TWAAIo/2rYLOakyYPIRoeXIqK+sTrzTCg==
+length: 2570
 -->
