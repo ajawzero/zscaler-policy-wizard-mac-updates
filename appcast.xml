@@ -4,31 +4,43 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.0</title>
-            <pubDate>Mon, 19 Oct 2026 00:34:29 -0500</pubDate>
+            <title>1.0.1</title>
+            <pubDate>Mon, 19 Oct 2026 07:43:46 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>1</sparkle:version>
-            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[The first release of Zscaler Policy Wizard for macOS: build best-practice Zscaler policy, see exactly what it would change, and test what your policy does to traffic, without leaving your Mac.
+            <description sparkle:format="markdown"><![CDATA[A review of every setting in the four security tiers: fixes where a tier didn't do what it said, and better defaults.
 
-### Added
-- **ZIA Policy:** pick a security tier (Strict, Balanced, Permissive or ZTH Ebook) and a compliance framework (HIPAA, HITRUST CSF, NIST 800-53, NIST 800-171, CMMC Level 2, PCI DSS, CJIS, SOX, FERPA or GDPR). Limit it to a pilot group, fine-tune each rule, and review the compliance evidence. A read-only **Dry Run** shows every rule it would create; **Apply** creates them and activates, and **Undo** removes them again.
-- **Digital Experience (ZDX):** monitor Microsoft login and your own apps with Web and CloudPath probes, starting from the POV best-practice template, with a dry run, Apply with read-back, Undo, and a **Manage** page.
-- **Client Connector (ZCC):** create a forwarding profile and a Windows or macOS app profile from the POV best-practice templates, with a dry run, Apply with read-back, Undo, and a **Manage** page.
-- **Policy Simulator:** would this be allowed, blocked, isolated or bypassed, and by which rule? Test against your tenant's ZIA, Client Connector and ZPA policy, the sample policies or a saved snapshot.
-  - **Category Lookup** for up to 100 destinations.
-  - **Bulk Test** for thousands of destinations from a CSV file, with recommendations on where to fix the ones that don't behave as expected.
-  - **Block it / allow it:** change the policy from a result or from bulk rows (ZIA rules and lists, or a ZPA private application), with a preview of every change first and Undo after.
-- **Help:** a searchable guide for beginners, with **Help for This Page** on every page.
-- **Automatic updates:** the app checks once a day and asks before installing. **Zscaler Policy Wizard › Check for Updates…** checks now.
+### Fixed
+- **ZTH Ebook:** newly registered and revived domains now get their caution page (a block rule above it used to catch them first). AI apps get a caution page with uploads blocked, as the tier describes, instead of being blocked outright. The crypto rule, which blocked an unrelated category, is gone: crypto exchanges are categorized as Finance, and the checklist says how to block them. Its AI caution rule, which applied to general IT sites, is gone too.
+- **Strict and ZTH Ebook** no longer block every collaboration app, so Zoom, Teams and Webex keep working.
+- **ZTH Ebook** now includes the Malware Protection and Advanced Settings steps, with Strict's values.
+- **Strict and Balanced** require TLS 1.2 on inspected traffic. Strict blocks untrusted server certificates; Balanced passes them through to the browser's warning.
+- **Permissive** keeps domain fronting and CONNECT/SNI mismatch protection, and applies firewall rules to remote users.
 
-Needs macOS 13 or later (Apple silicon or Intel) and a Zscaler OneAPI API client.
+### Changed
+- **Permissive** is minimal again: no blocks on executable downloads, file sharing, personal webmail or social posts. Uncategorized sites get a caution page and remote access tools are allowed. Office files and executables are scanned in the Sandbox without holding them. It has no DLP rules, since it doesn't inspect SSL, and Review lists the rules that apply to unencrypted HTTP only.
+- **Balanced:**
+  - Uncategorized sites open in Browser Isolation (a caution page without it), and remote access tools get a caution page.
+  - Executables are held in the Sandbox until analyzed instead of blocked.
+  - Only Windows script downloads are blocked.
+  - DNS tunnels are blocked only in the risky categories.
+  - The firewall blocks P2P and tunneling apps.
+  - File sharing and webmail block only uploads and attachments.
+- **Strict:**
+  - The firewall's default deny now lets through only web, NTP, meetings (including the STUN traffic calls use), ICMP and OCSP; SSH and RDP to the internet need a rule of your own.
+  - Executables are held in the Sandbox.
+  - Health and finance sites aren't inspected.
+- **News sites** are no longer in the Bandwidth Loss rules (blocked in Strict, a caution page in Balanced).
+- **DLP:** HIPAA and PII rules need a Social Security number together with medical information or names, instead of either one alone. The PCI rule looks for card numbers only, and the resume rule for resumes only.
+- **Malware Protection** lists a Suspicious Content Protection (PageRisk) threshold for each tier.
+- **Policy Simulator:** a PAC file over 2 MB is refused as it downloads, and CSV exports also neutralize cells that start with a tab or carriage return.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0/Zscaler-Policy-Wizard-1.0.dmg" length="8574356" type="application/octet-stream" sparkle:edSignature="OnIuDmyn2qF6iWt0HlsATVQoLjwFffQELAJ6pK2YJagoWkleG/U6U/mHYesKLGbrPxkURAbyWwuyWI00EpQhBg=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0.1/Zscaler-Policy-Wizard-1.0.1.dmg" length="8600668" type="application/octet-stream" sparkle:edSignature="viJFUgfjf9TLlJILfrYNQXrOXUVvh1wtX8xxvTHTw9LIJ5UKARzVZUtgIEgdmRhMUX81a/zsDn+zWeYqF9u5Aw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: 7s1qVSlfQ25Lk5T/aPRmoZS9hcP0OjAIA+apsdG6AManDYm/j5ef0Bpib5ySf3m6srP/N4Ikr8rgTCXa0gR1DA==
-length: 3202
+edSignature: 7PeVv6HBEjWY0c1o2dwUVc+eR9QqQ/Y5dzGol1lV8CP778vuWq8VPb4cTRe+MjYtv6xa+i52J3ekfeYJiL0GBA==
+length: 4042
 -->
