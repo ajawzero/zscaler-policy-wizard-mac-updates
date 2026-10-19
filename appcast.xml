@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Zscaler Policy Wizard</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Mon, 19 Oct 2026 00:34:29 -0500</pubDate>
+            <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[The first release of Zscaler Policy Wizard for macOS: build best-practice Zscaler policy, see exactly what it would change, and test what your policy does to traffic, without leaving your Mac.
+
+### Added
+- **ZIA Policy:** pick a security tier (Strict, Balanced, Permissive or ZTH Ebook) and a compliance framework (HIPAA, HITRUST CSF, NIST 800-53, NIST 800-171, CMMC Level 2, PCI DSS, CJIS, SOX, FERPA or GDPR). Limit it to a pilot group, fine-tune each rule, and review the compliance evidence. A read-only **Dry Run** shows every rule it would create; **Apply** creates them and activates, and **Undo** removes them again.
+- **Digital Experience (ZDX):** monitor Microsoft login and your own apps with Web and CloudPath probes, starting from the POV best-practice template, with a dry run, Apply with read-back, Undo, and a **Manage** page.
+- **Client Connector (ZCC):** create a forwarding profile and a Windows or macOS app profile from the POV best-practice templates, with a dry run, Apply with read-back, Undo, and a **Manage** page.
+- **Policy Simulator:** would this be allowed, blocked, isolated or bypassed, and by which rule? Test against your tenant's ZIA, Client Connector and ZPA policy, the sample policies or a saved snapshot.
+  - **Category Lookup** for up to 100 destinations.
+  - **Bulk Test** for thousands of destinations from a CSV file, with recommendations on where to fix the ones that don't behave as expected.
+  - **Block it / allow it:** change the policy from a result or from bulk rows (ZIA rules and lists, or a ZPA private application), with a preview of every change first and Undo after.
+- **Help:** a searchable guide for beginners, with **Help for This Page** on every page.
+- **Automatic updates:** the app checks once a day and asks before installing. **Zscaler Policy Wizard › Check for Updates…** checks now.
+
+Needs macOS 13 or later (Apple silicon or Intel) and a Zscaler OneAPI API client.
+]]></description>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0/Zscaler-Policy-Wizard-1.0.dmg" length="8574356" type="application/octet-stream" sparkle:edSignature="OnIuDmyn2qF6iWt0HlsATVQoLjwFffQELAJ6pK2YJagoWkleG/U6U/mHYesKLGbrPxkURAbyWwuyWI00EpQhBg=="></enclosure>
+        </item>
+    </channel>
+</rss><!-- sparkle-signatures:
+edSignature: 7s1qVSlfQ25Lk5T/aPRmoZS9hcP0OjAIA+apsdG6AManDYm/j5ef0Bpib5ySf3m6srP/N4Ikr8rgTCXa0gR1DA==
+length: 3202
+-->
