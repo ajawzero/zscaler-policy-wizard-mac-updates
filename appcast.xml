@@ -4,28 +4,26 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.0.3</title>
-            <pubDate>Mon, 19 Oct 2026 12:18:17 -0500</pubDate>
+            <title>1.0.4</title>
+            <pubDate>Mon, 19 Oct 2026 14:32:38 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>4</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Added
-- **Help: how the tiers compare.** The Security Tier article has a chart of what Strict, Balanced, Permissive and ZTH Ebook each do: site categories, SSL inspection, firewall, executables, file sharing and webmail, AI apps and DLP.
-- **Help: ↑ and ↓** move through the articles, or through the search results while you search, even with the cursor in the search box.
-- **New compliance frameworks:**
-  - **CMMC Level 1:** the basic safeguarding of Federal Contract Information (FAR 52.204-21).
-  - **CIPA**, for K-12 schools and libraries: it also turns on SafeSearch and ZIA's CIPA Compliance rule.
-  - **ISO/IEC 27001:2022**, **SOC 2** and **CIS Controls v8.1**.
-- **Every framework's controls reviewed:** a rule now maps to a control only when it really helps meet it. Mappings that over-claimed are gone (for example PCI DSS 6.4, and content filtering under FERPA), closer matches are added, and the Compliance Evidence says it shows configuration, not certification.
+            <description sparkle:format="markdown"><![CDATA[Fixes for Zscaler behavior found in live testing (thanks to the ZTP Policy Wizard project's v2.0 findings).
 
-### Changed
-- **Help is up to date** with 1.0.1 and 1.0.2: Apply setting the tenant-wide settings and Undo putting them back, the dry run's UPDATE rows, Microsoft 365 and SafeSearch, Permissive's inspection, and a reminder that tenant-wide settings apply to everyone even when the rules are for a pilot group.
+### Fixed
+- **Cloud App Control caution rules** now name the browsers they apply to; ZIA refuses a caution action otherwise.
+- **AI apps** get a caution page, but uploads aren't blocked across the whole category in Balanced, Permissive and ZTH Ebook any more, because ZIA doesn't accept that combination. Blocking uploads to specific AI apps comes in 1.1.
+- **Balanced social media** blocks posting with viewing allowed, the combination ZIA accepts. Balanced's file-sharing, webmail, chat-file and streaming-upload blocks allow viewing alongside the block. If ZIA refuses one of them across a whole category, Apply leaves it out with an explanation instead of failing.
+- **ZIA sign-in:** when ZIA ends its API session before the sign-in expires, the app signs in again and carries on.
+- **Timeouts:** a read or a settings change that times out is tried once more.
+- **DLP engines:** their descriptions are kept within ZIA's 255-byte limit.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0.3/Zscaler-Policy-Wizard-1.0.3.dmg" length="8831770" type="application/octet-stream" sparkle:edSignature="I6Ix3tdk0A8wwK80Y3ZsFJhyEf/gvL1cjn11unXiK1VeM2MYxrWD0PJXloiOGs/4uocGFfEY5SKTeh5McM35DA=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0.4/Zscaler-Policy-Wizard-1.0.4.dmg" length="8828563" type="application/octet-stream" sparkle:edSignature="M3yvrTUfl+SvtyYMEuUwQ/vMnczZD9UbLckaKeWfCx/YT+69Xs/fFmbP791MAaAx9kmSoVLsWRZMbOrMdMADAQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: s5JDzBGIPM+XhmcYo1IXYaHd/FwGKxoV89o9fvQyf/bBpxcH7Xsd0TWAAIo/2rYLOakyYPIRoeXIqK+sTrzTCg==
-length: 2570
+edSignature: sisS84YLVPl8iDIUh9ldFFVw9s8R9BuRiyfQFut7ehzcbBZhIacie47pvIwqQwFtA5ah/Xb1x416tFwyHzz/AQ==
+length: 2322
 -->
