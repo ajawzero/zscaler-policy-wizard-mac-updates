@@ -4,34 +4,24 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.1.3</title>
-            <pubDate>Mon, 19 Oct 2026 23:15:09 -0500</pubDate>
+            <title>1.2</title>
+            <pubDate>Tue, 20 Oct 2026 10:29:12 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>9</sparkle:version>
-            <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description sparkle:format="markdown"><![CDATA[### Added
-- **High-risk countries:** every tier drops SSH, RDP and FTP to and from China, Russia, North Korea and Iran, above every rule that allows them.
-- **DNS over HTTPS is inspected:** every tier blocks DoH lookups of newly registered, dynamic DNS and spyware domains, and lets the rest resolve and be logged. Permissive now decrypts DNS over HTTPS services for this, which it didn't before. Cloud App Control's block of DoH apps is now created switched off; turn it on in ZIA to block DoH apps outright.
-- **Zscaler Trusted Resolver:** every tier answers DNS with the Zscaler Trusted Resolver, even from devices set to use another resolver such as 8.8.8.8. The rule can't be set to Allow or Block, since blocking it would stop all DNS.
-- **ZDX:** the Zscaler POV Best Practice template adds Microsoft Teams, Zoom and Webex. Zoom and Webex need the customer's account prefix; without one they're left out with a note instead of stopping the dry run.
-- **Dry run warnings:** the tenant's own firewall rules that the new ones go below; a firewall rule that blocks everything, so new rules below it would never match; and Allow on a whole Cloud App Control category, which takes those apps out of URL Filtering.
-- **ZDX:** the Apply page says who scoped probes run for. The dry run names the collection new apps go into, says how an existing app of the same name differs from your picks, and which changes stay after Undo.
+- **Private Access (ZPA):** a new module that publishes private applications through ZPA. It creates an App Connector Group and its provisioning key, a segment group, a server group and an application segment per app, then access, timeout, AppProtection inspection and browser isolation policies, with an optional Browser Access app and Privileged Remote Access (RDP, SSH) consoles.
+- **ZPA templates:** one wildcard segment for the internal domain, or the common apps (Active Directory, file shares, intranet, a jump host) with Healthcare, Financial services or Education apps. Applications can also be imported from, and saved to, a CSV.
+- **ZPA dry run, Apply and Undo:** the dry run reads the tenant and shows what Apply creates; objects already there are used as they are, and a destination already in another segment on the same ports is caught. Apply shows the provisioning key once and never saves it. Undo deletes what the run created. **Manage** lists and deletes the objects named with the prefix.
 
-### Fixed
-- **Strict's default deny** isn't created without the Allow-Web and Allow-NTP rules above it. The dry run stops when they're switched off, and Apply leaves it out when one of them fails, so it can't cut off web browsing.
-- **A plan with only tenant-wide settings to change** (every rule already in the tenant) can be applied. Apply was disabled and said "Nothing to create". The Apply page now counts the settings changes too.
-- **DLP rules** are sent again with fewer fields only after ZIA refused them. When a request gets no answer, Apply stops and says the rule may have been created, so it can't make a second one.
-- **DLP engines, DLP dictionaries and isolation profiles** that come back without an ID aren't used, so Apply sends only what the dry run showed.
-- **The Sandbox Office/PDF rule's description** no longer names "Default Isolation Profile", and says Quarantine when the tenant has no isolation profile.
-- **ZDX Undo** stops when ZDX returns an empty list it needs, instead of counting every change as undone.
-- **ZDX** forgets a predefined app's prefix read from a tenant when you disconnect.
-- **Dry run errors** wrap instead of being cut off, and Continue to Apply is greyed out while the dry run has errors.
+### Changed
+- **Policy Simulator:** when the ZPA customer ID isn't in the API token, it's also looked up in Client Connector's company information.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.1.3/Zscaler-Policy-Wizard-1.1.3.dmg" length="9381239" type="application/octet-stream" sparkle:edSignature="uFB5pmDbijK7FwcGSebyys2uYem8CgVyLIvKXrnQ/yuaLqhHXWpvfjcNCI8sjFbGmpUesEcE5vWSPM+CTFcKBA=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.2/Zscaler-Policy-Wizard-1.2.dmg" length="10683965" type="application/octet-stream" sparkle:edSignature="vSxxvFtkXGBD6W9+yhE2MV8wS8E4qzCBnQhHNkmO/N2cpNNBNeEcpv64bLcGC7tfGdXmy870PjTYtVfdAigMBQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: 0l4AjZPrBs6E9gNI5JGs5Jit0/tV2Wqbi/y94ggxuLvJegNv3uMIFQEtsDMsDXNT+jHanIWCfsGIeZ4Zx2xpBg==
-length: 3938
+edSignature: SoIVL7aht7JqLJQjUcGdu/brLslh4ZZrt29KWvniz4xDzm76RIKCvsizwcSPA15+1uMOCFym93egJh7e7Ay6Aw==
+length: 2435
 -->
