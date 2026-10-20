@@ -4,26 +4,26 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.0.4</title>
-            <pubDate>Mon, 19 Oct 2026 14:32:38 -0500</pubDate>
+            <title>1.1</title>
+            <pubDate>Mon, 19 Oct 2026 18:58:50 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>5</sparkle:version>
-            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[Fixes for Zscaler behavior found in live testing (thanks to the ZTP Policy Wizard project's v2.0 findings).
-
-### Fixed
-- **Cloud App Control caution rules** now name the browsers they apply to; ZIA refuses a caution action otherwise.
-- **AI apps** get a caution page, but uploads aren't blocked across the whole category in Balanced, Permissive and ZTH Ebook any more, because ZIA doesn't accept that combination. Blocking uploads to specific AI apps comes in 1.1.
-- **Balanced social media** blocks posting with viewing allowed, the combination ZIA accepts. Balanced's file-sharing, webmail, chat-file and streaming-upload blocks allow viewing alongside the block. If ZIA refuses one of them across a whole category, Apply leaves it out with an explanation instead of failing.
-- **ZIA sign-in:** when ZIA ends its API session before the sign-in expires, the app signs in again and carries on.
-- **Timeouts:** a read or a settings change that times out is tried once more.
-- **DLP engines:** their descriptions are kept within ZIA's 255-byte limit.
+            <description sparkle:format="markdown"><![CDATA[### Added
+- **Modules.** After Connect, Home shows a card for each module: ZIA Policy, Digital Experience, Client Connector and Policy Simulator. The sidebar lists only the chosen module's pages, with a menu at its top to switch (⌘1–⌘4, ⌘0 for Home). Each module keeps its place while you work in another.
+- **Your corporate apps** (Customize): pick the collaboration and meeting, cloud storage, AI and email apps your organization uses, or pick others from that category of the tenant's app catalog. Tiers that restrict an app's category allow each corporate app with its own rule above that one, so Strict blocks file sharing but not your OneDrive. Microsoft 365 customers get Teams, OneDrive, SharePoint, Outlook and Copilot picked for them.
+- **Strict and ZTH Ebook block collaboration and meeting apps** except your corporate ones.
+- **Permissive inspects AI apps** (the AI & ML categories), which it shows a caution page for: the caution page and Capture Prompts work only on inspected traffic.
+- **Balanced:** every AI app can be used but files can't be uploaded to it (in place of the caution page); file sharing and webmail stay viewable without uploads or attachments, and LinkedIn is read only. Your corporate apps are allowed fully.
+- **The dry run checks each app rule with ZIA:** it finds the apps in their category of the tenant's catalog and asks ZIA which actions it accepts for them, then uses an accepted set or leaves the rule out with a warning.
+- **UCaaS One Click** for your corporate Zoom, Webex, GoTo, RingCentral and Talkdesk.
+- **Capture Prompts** on your corporate AI apps' Cloud App Control rules, off unless you turn it on (captured prompts are kept in Zscaler's logs). If the tenant isn't licensed for it, the rules are created without it.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.0.4/Zscaler-Policy-Wizard-1.0.4.dmg" length="8828563" type="application/octet-stream" sparkle:edSignature="M3yvrTUfl+SvtyYMEuUwQ/vMnczZD9UbLckaKeWfCx/YT+69Xs/fFmbP791MAaAx9kmSoVLsWRZMbOrMdMADAQ=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.1/Zscaler-Policy-Wizard-1.1.dmg" length="9206137" type="application/octet-stream" sparkle:edSignature="gFBsGeuD6kl1Qrzsj+aX3Vf7sGPapm4hwm7l2ChzJY5nt5Fs/NGjFbXNhjiZcV/F4Fxwg8ROTwG85DUgEe7hDA=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: sisS84YLVPl8iDIUh9ldFFVw9s8R9BuRiyfQFut7ehzcbBZhIacie47pvIwqQwFtA5ah/Xb1x416tFwyHzz/AQ==
-length: 2322
+edSignature: ZbyaKKapOP11IEY0e1o4GOmPiGyUpsYnXWfulKY29WNvZNpEpapf1h6PIOVWgi5xxnL2nhcZTnoP/cZulme8BQ==
+length: 3044
 -->
