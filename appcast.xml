@@ -4,26 +4,19 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.1</title>
-            <pubDate>Mon, 19 Oct 2026 18:58:50 -0500</pubDate>
+            <title>1.1.1</title>
+            <pubDate>Mon, 19 Oct 2026 21:42:53 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>6</sparkle:version>
-            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Added
-- **Modules.** After Connect, Home shows a card for each module: ZIA Policy, Digital Experience, Client Connector and Policy Simulator. The sidebar lists only the chosen module's pages, with a menu at its top to switch (⌘1–⌘4, ⌘0 for Home). Each module keeps its place while you work in another.
-- **Your corporate apps** (Customize): pick the collaboration and meeting, cloud storage, AI and email apps your organization uses, or pick others from that category of the tenant's app catalog. Tiers that restrict an app's category allow each corporate app with its own rule above that one, so Strict blocks file sharing but not your OneDrive. Microsoft 365 customers get Teams, OneDrive, SharePoint, Outlook and Copilot picked for them.
-- **Strict and ZTH Ebook block collaboration and meeting apps** except your corporate ones.
-- **Permissive inspects AI apps** (the AI & ML categories), which it shows a caution page for: the caution page and Capture Prompts work only on inspected traffic.
-- **Balanced:** every AI app can be used but files can't be uploaded to it (in place of the caution page); file sharing and webmail stay viewable without uploads or attachments, and LinkedIn is read only. Your corporate apps are allowed fully.
-- **The dry run checks each app rule with ZIA:** it finds the apps in their category of the tenant's catalog and asks ZIA which actions it accepts for them, then uses an accepted set or leaves the rule out with a warning.
-- **UCaaS One Click** for your corporate Zoom, Webex, GoTo, RingCentral and Talkdesk.
-- **Capture Prompts** on your corporate AI apps' Cloud App Control rules, off unless you turn it on (captured prompts are kept in Zscaler's logs). If the tenant isn't licensed for it, the rules are created without it.
+            <description sparkle:format="markdown"><![CDATA[### Changed
+- **Help** covers more of 1.1: what Apply does when ZIA refuses a Cloud App Control rule (its fallback actions, then a skip with ZIA's reason), the dry run's note when ZIA offers only some of a corporate app's actions, the related messages under Common errors, and Cloud App Control, corporate apps, UCaaS One Click and Capture Prompts in the glossary.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.1/Zscaler-Policy-Wizard-1.1.dmg" length="9206137" type="application/octet-stream" sparkle:edSignature="gFBsGeuD6kl1Qrzsj+aX3Vf7sGPapm4hwm7l2ChzJY5nt5Fs/NGjFbXNhjiZcV/F4Fxwg8ROTwG85DUgEe7hDA=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.1.1/Zscaler-Policy-Wizard-1.1.1.dmg" length="9207580" type="application/octet-stream" sparkle:edSignature="wqBfOK4BHIkcMPSXOisQpOKjtT/u+quvAwIEli10nh+jw96Ht5lIPN/FHnoPcd/ZEqYek5qQzBPSclY77yE6AA=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: ZbyaKKapOP11IEY0e1o4GOmPiGyUpsYnXWfulKY29WNvZNpEpapf1h6PIOVWgi5xxnL2nhcZTnoP/cZulme8BQ==
-length: 3044
+edSignature: +DMZOchtcoOzAS4QnFC8nLTPjId9N3Nrl1eFh/bD43FAhy/CMfRu1YjqxpjigxGq2RWEXLn+YOH9958d5ui8BQ==
+length: 1638
 -->
