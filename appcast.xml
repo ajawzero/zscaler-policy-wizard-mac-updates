@@ -4,25 +4,24 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.4</title>
-            <pubDate>Tue, 20 Oct 2026 17:24:08 -0500</pubDate>
+            <title>1.5</title>
+            <pubDate>Tue, 20 Oct 2026 18:02:26 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>12</sparkle:version>
-            <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>1.5</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description sparkle:format="markdown"><![CDATA[### Added
-- **DLP dictionaries for what Zscaler has none for:** ICD-10 diagnosis codes, Medicare Beneficiary Identifiers, medical record numbers, card track data, CUI markings, criminal justice records, student records and material non-public information, each citing its source. The wizard creates the ones a framework needs and a DLP rule on each: HIPAA, HITRUST and ZTH Ebook get PHI identifiers and ICD-10 codes; PCI, card track data; NIST and CMMC, CUI markings; CJIS, criminal justice records; FERPA and CIPA, student records; SOX, non-public financial information. Like every DLP rule, they monitor until you set them to Block. Permissive doesn't get them.
-- **Endpoint DLP** (needs its licence): a Customize switch, off by default, for rules that log sensitive files copied to USB drives, uploaded to personal cloud storage or printed. They only monitor. A tenant without the licence gets a dry-run warning and the rest of the run goes on.
-- **Cloud Sandbox licence** on Customize: Advanced (the tier's rules, as before) or Standard (one rule that scans Windows executables and libraries).
-
-### Changed
-- **DLP engines** are built from groups of dictionaries ("any of these and any of those"). The existing rules match exactly as before.
-- Undo removes the new dictionaries after the engines and rules that use them.
+- **Field differences:** the ZIA dry run shows, for each rule already in the tenant, every field where it differs from what the wizard would send (as the tenant has it → as the plan has it).
+- **Update in place:** a ZIA rule the wizard made that differs is updated to match (keeping its position and whether it's switched on), and so is the wizard's DLP engine when its dictionaries changed; a ZPA application segment with other destinations or ports gets the application's. Undo puts each back, unless someone changed it since. A switch on each Dry Run page leaves them as they are instead.
+- **Licences:** once connected, Home lists the tenant's licences against what a POV shows (missing core ones, optional ones, subscriptions ending within 21 days); Customize marks modules the tenant isn't licensed for and takes the Cloud Sandbox licence from the subscriptions.
+- **Check for Drift:** next to Undo for ZIA and ZPA runs, it reads back what the run created or updated and lists what was deleted, renamed or changed since. It changes nothing.
+- **Summary report:** from ZIA's Apply page, as Markdown or a printable page: the policy and its rules, this session's results in every module, licences, warnings and follow-ups. No keys or passwords are in it.
+- **Bulk Rule Manager** (⌘6): the tenant's ZIA rules (the wizard's by default) to delete in bulk, with ZPA's and ZDX's Manage lists beside them.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.4/Zscaler-Policy-Wizard-1.4.dmg" length="11609874" type="application/octet-stream" sparkle:edSignature="NwunO9lVdW0+dPYAUo85I6Y4SCah9CB72vfjGRvVmC85PqrvX/70kBOG+R8imhp5dTYE/7017RQQECP/CkM/CQ=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.5/Zscaler-Policy-Wizard-1.5.dmg" length="12110902" type="application/octet-stream" sparkle:edSignature="sofZGwSIOiWbXzeNP07UWAnCTShEUomSCZIG/+cAmzdH9/q99TZC6hsjE/+PUxOZJE0PpXTfYyszMlKnXujfCQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: HSZa3nO+1byuCtIJ0xmKfZOmKtHfTblNpiL2MPlmdnlarQ5DI7cOoYtH+Z+B1zt2C4bsbGQi8/1IUOn+HZ0HAQ==
-length: 2592
+edSignature: uStmu8sxQe7SSuhcs4M76ey6hDHhOVZETpLCsRhtGa+3vcpUpWDIq8hAFh4qViXi7Wo9+dVpEO+Nd7Tq8LVODw==
+length: 2684
 -->
