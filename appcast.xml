@@ -4,31 +4,25 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.3</title>
-            <pubDate>Tue, 20 Oct 2026 14:51:17 -0500</pubDate>
+            <title>1.4</title>
+            <pubDate>Tue, 20 Oct 2026 17:24:08 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>11</sparkle:version>
-            <sparkle:shortVersionString>1.3</sparkle:shortVersionString>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description sparkle:format="markdown"><![CDATA[### Added
-- **Client Connector lists:** VPN gateway bypasses, IP inclusions and exclusions, and domain inclusions and exclusions, per app profile. Each starts with the template's entries, and the dry run checks them the way Client Connector takes them.
-- **Tamper protection password:** the Best Practice app profiles get one password for logging out, exiting, uninstalling and turning off ZIA, ZPA or ZDX. It's generated in the app, shown once after Apply and never saved.
-- **Automatic ZPA re-authentication** on every network, in both app profile templates.
-- **Bypass apps:** pick which IP-based apps bypass Zscaler, from the tenant's list.
-- **Devices & Install:** enrolled devices with their one-time passwords, and an install command and script for the Windows MSI or EXE and the macOS installer, with an app profile's policy token.
-- **API meter:** Client Connector's and ZDX's pages count this app's calls against their limit of about 100 an hour. When Zscaler asks to wait, a countdown appears, no calls are sent until it's over, and a dry run that was stopped runs again by itself.
-- **Rule search:** the Rules page has a search, a Changed from Default and a Switched Off filter, Expand All and Collapse All, and the keys / (search), E (expand), C (collapse) and Esc (clear).
-- **Save and load selections:** save the ZIA wizard's choices (tier, framework, prefix, Customize's choices and every rule switch and action) to a file, and load them for the next POV. Who the rules apply to, the isolation profile and the certificate aren't saved, since they belong to one tenant.
+- **DLP dictionaries for what Zscaler has none for:** ICD-10 diagnosis codes, Medicare Beneficiary Identifiers, medical record numbers, card track data, CUI markings, criminal justice records, student records and material non-public information, each citing its source. The wizard creates the ones a framework needs and a DLP rule on each: HIPAA, HITRUST and ZTH Ebook get PHI identifiers and ICD-10 codes; PCI, card track data; NIST and CMMC, CUI markings; CJIS, criminal justice records; FERPA and CIPA, student records; SOX, non-public financial information. Like every DLP rule, they monitor until you set them to Block. Permissive doesn't get them.
+- **Endpoint DLP** (needs its licence): a Customize switch, off by default, for rules that log sensitive files copied to USB drives, uploaded to personal cloud storage or printed. They only monitor. A tenant without the licence gets a dry-run warning and the rest of the run goes on.
+- **Cloud Sandbox licence** on Customize: Advanced (the tier's rules, as before) or Standard (one rule that scans Windows executables and libraries).
 
 ### Changed
-- **IPv6:** the forwarding profile's Drop IPv6 is two settings, for dual-stack and for IPv6-only networks.
-- **Running Client Connector again:** a profile the wizard made (named ZPW-…) is updated in place instead of stopping the dry run. It keeps its rule order and whether it's enabled; the dry run lists what changes. Undo can't put an updated profile back, and says so.
-- **Manage** hides passwords in a profile's JSON.
+- **DLP engines** are built from groups of dictionaries ("any of these and any of those"). The existing rules match exactly as before.
+- Undo removes the new dictionaries after the engines and rules that use them.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.3/Zscaler-Policy-Wizard-1.3.dmg" length="11471491" type="application/octet-stream" sparkle:edSignature="RDXTcTXaSWOJjWmfgpD2tNa2C3OgIpacczX14babKsuKlu/J85o1B6s5qJhjYGEeQ2R/6ZYrlm4KsR5KQeQVBA=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.4/Zscaler-Policy-Wizard-1.4.dmg" length="11609874" type="application/octet-stream" sparkle:edSignature="NwunO9lVdW0+dPYAUo85I6Y4SCah9CB72vfjGRvVmC85PqrvX/70kBOG+R8imhp5dTYE/7017RQQECP/CkM/CQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: ZsVFI/onspm5HGnVY+BjVKGOG79+IswrzuEfBqPRPg8+9FMLlsFdK8jWGOY3DmlaY8d8NDerWs3hGOJYEe2GAw==
-length: 3290
+edSignature: HSZa3nO+1byuCtIJ0xmKfZOmKtHfTblNpiL2MPlmdnlarQ5DI7cOoYtH+Z+B1zt2C4bsbGQi8/1IUOn+HZ0HAQ==
+length: 2592
 -->
