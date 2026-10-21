@@ -4,31 +4,34 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.7</title>
-            <pubDate>Tue, 20 Oct 2026 23:20:46 -0500</pubDate>
+            <title>1.8</title>
+            <pubDate>Wed, 21 Oct 2026 09:53:08 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>16</sparkle:version>
-            <sparkle:shortVersionString>1.7</sparkle:shortVersionString>
+            <sparkle:version>17</sparkle:version>
+            <sparkle:shortVersionString>1.8</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description sparkle:format="markdown"><![CDATA[### Added
-- **Policy Simulator, a user's devices:** Find Devices lists the user's Client Connector devices; the simulation uses the picked device's app profile and warns when its ZIA or ZPA is off or unhealthy, or it hasn't checked in for a week.
-- **Policy Simulator, ZPA path health:** a ZPA result shows the application's server groups, App Connector groups and connectors up or down, and certificates near their end; the Policies page names connector groups with nothing up and certificates ending soon.
-- **Policy Simulator, recent changes:** ZIA's audit log for the last hour to 30 days, searchable, beside a result.
-- **Policy Simulator, from this Mac:** for the destination simulated, whether this Mac goes through Zscaler, what DNS answers, whether a connection opens, and whose certificate the server shows.
-- **Policy Simulator, workloads:** simulate a server or VM behind a Cloud or Branch Connector by its source IP, cloud tags or workload groups. ZIA rules match workload groups, and the connector's own forwarding rules (ZIA, ZPA, direct, local switch, proxy chain or drop) decide where its traffic goes. The sample policy has workloads to try.
+- **SSL Certificates** (the last ZIA Policy page): every SSL Inspection rule with the certificate it signs with. Pick Inspect rules, choose an intermediate CA or the Zscaler default, preview, then change them in one go and activate. Undo puts each rule's certificate back, also from the Apply page, even after quitting.
+- **Capture a tenant's policies:** Capture Tenant Policies… on Security Tier reads a tenant's own URL Filtering, Cloud Firewall, SSL Inspection, Sandbox, DNS Security and File Type Control rules, and the custom URL categories they use, into a selections file. Nothing in the tenant changes. Load the file while connected to another tenant to build it from those rules: they're created with your prefix, their custom categories first, and the dry run, Apply and Undo work as for a tier. Who rules apply to and the tenant's own objects (network services, IP groups, gateways) aren't carried over; a rule that would be left matching all traffic is left out. Every such case is listed.
+- **Export Change Log…** (File menu, and on Home): every change this Mac's run records hold, across ZIA, ZPA, ZDX and Client Connector, as CSV or JSON, with what Undo has removed or put back.
 
 ### Changed
-- **Policy Simulator:** a destination group Zscaler manages, such as ZPA Brokers, is no longer read as matching everything; a policy set the tenant isn't licensed for shows "not subscribed".
+- Selections files with captured policies are version 2; earlier versions of the app decline them instead of applying the tier's rules.
+- **POV Start:** Apply All lists, under each product, what its dry run says to note (for Internet Access also who the rules apply to and the tenant-wide settings it changes), and needs "I've reviewed each dry run" ticked first.
+- **Policy Simulator, Recent changes:** when ZIA is already building an audit log report (perhaps another admin's), the app asks before cancelling it.
+- **Customize** says when URL & Cloud App Settings is off, so SafeSearch, CIPA Compliance and Office 365 One Click won't be set.
+- **Compliance evidence** for HITRUST CSF, PCI DSS, ISO 27001, SOC 2 and CIS Controls keeps each control's ID and title and describes, in the app's own words, what the policy does toward it. CIS Controls are credited.
 
 ### Fixed
-- **Rules:** Changed from Default now lists a Cloud App Control rule whose actions changed while its summary stayed Block.
-- **ZDX:** a rate-limited dry run waiting to run again stays in view with its Cancel, and doesn't run once nothing is selected.
-- **Connect:** a licence read still running when you disconnect no longer shows, or picks the Sandbox licence, under the next connection.
+- A rule-name prefix of 31 characters or more crashed the app; names are now shortened as a whole instead.
+- CIPA's evidence cites the Internet safety policy's matters as 254(l)(1)(A)(i) to (v), as the statute numbers them.
+- Advanced Threat Protection: when ZIA refuses the update for a reason other than a feature flag, the app reports ZIA's own error instead of a feature flag. After a retry without the feature-flagged settings, it reads the settings back and names any that changed, so you can set them back.
+- The DLP dry run no longer says a rule's engine matches other dictionaries when none are left.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.7/Zscaler-Policy-Wizard-1.7.dmg" length="13348029" type="application/octet-stream" sparkle:edSignature="JyJasJqcEilE4RLGS1IL9PUji54pTq92sc1Bfqe/y1XCIq4qf+fPRxp/XkL2sgh2W8AjNe+PuzQCkx8gUfsqBQ=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.8/Zscaler-Policy-Wizard-1.8.dmg" length="13895407" type="application/octet-stream" sparkle:edSignature="CfUNvib8SdOul6jL6HBB21czTYFI4tW7OEO67Gn0L4NptdQoB8cQ0BpiToMX7lWVnsGjVkVQa/5obWBvrUCuBw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: n26M/NcY5pB/XkJYnGQE3lNXypJHh468iv6FFIpVXNVI8WQPRBS4NJudaY9TFGfjx3tR0MGbwFqhgi4uFLT5BQ==
-length: 3031
+edSignature: aJ0Oi4Y4an+efrxXJNAlVUyUGP1UAbJkfJirQ8PC4jcLoKtS72do+chWYtKfk3vsg/jJY0UyWHctQzDopyhOAQ==
+length: 3971
 -->
