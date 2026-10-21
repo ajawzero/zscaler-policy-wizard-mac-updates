@@ -4,23 +4,19 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.9</title>
-            <pubDate>Wed, 21 Oct 2026 10:53:30 -0500</pubDate>
+            <title>1.10</title>
+            <pubDate>Wed, 21 Oct 2026 11:40:58 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>18</sparkle:version>
-            <sparkle:shortVersionString>1.9</sparkle:shortVersionString>
+            <sparkle:version>19</sparkle:version>
+            <sparkle:shortVersionString>1.10</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description sparkle:format="markdown"><![CDATA[### Added
-- **Active POVs** (POV Start's first page): every POV is saved on this Mac. Filling the intake while connected saves it for that tenant, and from then on its choices in POV Start and the four wizards, the page you're on, each Apply and the POV test results are saved as you go. **Resume** puts every wizard back where you left off, and only while you're connected to the POV's own tenant.
-- **A POV's home:** an overview of the plan and where things stand, what the app did in each Apply, the customer's success criteria linked to POV tests, a timeline of kickoff, check-ins and the end date, follow-ups and notes. Status moves from Planning to Built to Testing by itself, and can be set by hand; a POV untouched for a week is marked quiet.
-- **Templates** of a POV's choices (no customer, tenant, prefix, hosts or secrets) to start the next POV from, and **export, import and archive** of POVs.
-- Keys, passwords and secrets are never saved with a POV. Client Connector's tamper protection password is made again when a POV is resumed.
-- **Policy Simulator, Simulate as and Compare:** search the directory (ZIdentity, ZIA users and groups, ZPA SCIM groups) for a user or group and simulate as them, or pick two and compare the results side by side, module by module, with what differs highlighted.
+- **Client Connector › Edit Existing Profiles:** apply best-practice settings to the tenant's own forwarding profile and Windows app profile: the forwarding settings (Z-Tunnel 2.0, transparent redirect, drop IPv6 and more), the network and DNS switches, the IP, domain, VPN gateway and bypass lists, DNS settings and the logout, exit, uninstall and disable passwords. Review shows what's sent; there's no dry run or Undo, so note the current settings first. The change log lists each edit, and passwords are never saved.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.9/Zscaler-Policy-Wizard-1.9.dmg" length="14998202" type="application/octet-stream" sparkle:edSignature="SqTXHcyQOHGYoTc134pbq390lvzJW9/RM0/aTTPKvMpCr5j5ch0EMXOFUinvSyw1Vm301pZa/pJSfIKUJZEdAQ=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.10/Zscaler-Policy-Wizard-1.10.dmg" length="15211433" type="application/octet-stream" sparkle:edSignature="47JOmj2A8MOVY2YoL/VZ0lzsjCOypsFR94NPggsejmfpsUDIHfYic4TqCaLkKaIHxmB/gXNVkBWRdYuksmjoCg=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: 3zYYcwNLlscF7n8aghMwtCY75GTdCeuO3Y8RL0ssvrCsbt0EHw5m1Y3ZySHQlLh9nyOaj+WNxa6pbwUiyqOEAg==
-length: 2576
+edSignature: fahWT5jQt9z7jY7fWKHslj/V/IY5t+7rMgu+XTJ4Xi6GKnCosWXAoPa1kWT89mIhSE9cxhmAKueUUoE9oDEQCw==
+length: 1804
 -->
