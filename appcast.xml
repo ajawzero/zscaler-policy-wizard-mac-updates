@@ -4,45 +4,31 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.6</title>
-            <pubDate>Tue, 20 Oct 2026 22:28:01 -0500</pubDate>
+            <title>1.7</title>
+            <pubDate>Tue, 20 Oct 2026 23:20:46 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>15</sparkle:version>
-            <sparkle:shortVersionString>1.6</sparkle:shortVersionString>
+            <sparkle:version>16</sparkle:version>
+            <sparkle:shortVersionString>1.7</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description sparkle:format="markdown"><![CDATA[### Added
-- **POV Start** (⌘7): a new module that runs a proof of value from one place.
-  - **Tenant Readiness:** a read-only check of what a POV needs, each with the fix: pending ZIA changes, SSL Inspection rules above Zscaler's recommended exemptions, isolation profiles, the Zscaler Trusted Resolver, identity-provider groups, licences; ZPA's AppProtection and Privileged Remote Access, App Connectors online, a PRA portal, web certificates; Client Connector's enrolled devices; ZDX.
-  - **Customer Intake:** the customer's name, a prefix made from it, the internal domain, VPN gateways, the products in scope and a market preset (Healthcare, Financial services, General enterprise, Education or none). One click fills every module; everything stays editable in its module.
-  - **Build the POV**, then **Dry Run & Apply:** each product in order (Client Connector first), one dry run across them and one Apply, through each module's own checks and Undo.
-  - **POV Tests:** a test for each policy the POV has, with the steps and what to expect, marked Pass, Fail or Skip with a note (saved as Markdown and added to the summary report); "Prove it" shows which URL Filtering rule the tenant applies to a URL; a DLP test kit of made-up patient, card, Social Security and CUI data.
-- **ZPA:** an access, timeout, inspection or isolation rule the wizard made gains the application segments a re-run adds (Undo puts it back).
-- **Bulk Rule Manager:** the ZIA tab also lists the tenant's custom DLP engines, DLP dictionaries and URL categories (the wizard's among them), so a POV can be cleaned up completely. Rules are deleted before the engines, dictionaries and categories they use.
+- **Policy Simulator, a user's devices:** Find Devices lists the user's Client Connector devices; the simulation uses the picked device's app profile and warns when its ZIA or ZPA is off or unhealthy, or it hasn't checked in for a week.
+- **Policy Simulator, ZPA path health:** a ZPA result shows the application's server groups, App Connector groups and connectors up or down, and certificates near their end; the Policies page names connector groups with nothing up and certificates ending soon.
+- **Policy Simulator, recent changes:** ZIA's audit log for the last hour to 30 days, searchable, beside a result.
+- **Policy Simulator, from this Mac:** for the destination simulated, whether this Mac goes through Zscaler, what DNS answers, whether a connection opens, and whose certificate the server shows.
+- **Policy Simulator, workloads:** simulate a server or VM behind a Cloud or Branch Connector by its source IP, cloud tags or workload groups. ZIA rules match workload groups, and the connector's own forwarding rules (ZIA, ZPA, direct, local switch, proxy chain or drop) decide where its traffic goes. The sample policy has workloads to try.
 
 ### Changed
-- **ZTH Ebook:** uncategorized and miscellaneous sites open in Browser Isolation (a caution page without an isolation profile) instead of being blocked. Strict still blocks them and Permissive still shows a caution page.
-- **Update in place (ZIA):** a rule updated to match the plan now loses what the plan leaves out, such as an isolation profile on a rule that now blocks, or categories and apps added in the portal; who the rule applies to and fields the wizard never sets stay. Undo puts back only the fields the run changed, so a rule switched off or moved since stays that way.
-- **Endpoint DLP** watches the framework's own data first (PHI identifiers for HIPAA, CUI markings for NIST 800-171, and so on), and says when a rule was created without an engine.
-- **Rule names:** shortening a long name to ZIA's 31 characters never abbreviates the prefix.
-- **Advanced Threat Protection:** on a tenant whose feature flags block some of its AI settings through the API, the rest are still applied, and the ones left out are named.
-- A rate-limited Client Connector or ZDX dry run runs again by itself at most three times, a minute apart at least.
-- **Disconnect** waits while an Apply, Undo or deletion is running, and each module's results are cleared when the connection changes.
-- The printable summary report is one file in the temporary folder, removed when the app starts and quits.
+- **Policy Simulator:** a destination group Zscaler manages, such as ZPA Brokers, is no longer read as matching everything; a policy set the tenant isn't licensed for shows "not subscribed".
 
 ### Fixed
-- **Client Connector:** re-running with the name of a ZPW- app profile that was assigned to groups or users in the portal no longer makes it apply to all users: the dry run stops instead. A forwarding profile updated in place now warns that portal changes are reset, naming the app profiles that use it.
-- **Client Connector:** an app profile write that got no answer is no longer rolled back (it may have gone through), and it's never sent twice; the profile is recorded for Undo when it's there. Editing Domain Inclusions no longer fails the "all domains" check after Apply. The Windows install script reads names with accents correctly.
-- **ZIA:** the dry run no longer says a rule's scope is left as it is when the rule will be updated; an update or setting that got no answer is recorded so Undo can check it; Apply catches an edit made in the portal after the dry run even past the first 140 characters of a field.
-- **ZPA:** Undo and Check for Drift refuse a run record for another ZPA customer; a read that fails during the dry run says so instead of looking like nothing in the tenant; Apply stops if a segment to update was changed after the dry run, and the dry run shows its current destinations and ports.
-- **Summary report:** after an Apply it lists the rules as applied, and never another connection's results.
-- **Bulk Rule Manager:** deletes only the ticked rules the page shows, and the confirmation names each one.
-- **Licences:** an answer the app can't read no longer marks every module as unlicensed. The Cloud Sandbox licence starts over with each connection, and one loaded from a selections file is kept.
-- **Selections files:** a whole policy type set to Isolate is ignored with a note, as the Rules page can't show it.
+- **Rules:** Changed from Default now lists a Cloud App Control rule whose actions changed while its summary stayed Block.
+- **ZDX:** a rate-limited dry run waiting to run again stays in view with its Cancel, and doesn't run once nothing is selected.
+- **Connect:** a licence read still running when you disconnect no longer shows, or picks the Sandbox licence, under the next connection.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.6/Zscaler-Policy-Wizard-1.6.dmg" length="12739043" type="application/octet-stream" sparkle:edSignature="yfCDs++Bztvlt2/eguGo3anhvn1s6VmcrhlP1YHFYz26sQ0Va+v8PMa7eFgiiC0UevH0L1pUffauglCI36sMDw=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.7/Zscaler-Policy-Wizard-1.7.dmg" length="13348029" type="application/octet-stream" sparkle:edSignature="JyJasJqcEilE4RLGS1IL9PUji54pTq92sc1Bfqe/y1XCIq4qf+fPRxp/XkL2sgh2W8AjNe+PuzQCkx8gUfsqBQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: 2B5Gn8I82Av4TfzQfgftMdfpFlzJdRPzDMrI/kkojW4oIaONXV2obi/bH0Jw8QXGDeMWjXSLrX5WQBTK2B1pDA==
-length: 6111
+edSignature: n26M/NcY5pB/XkJYnGQE3lNXypJHh468iv6FFIpVXNVI8WQPRBS4NJudaY9TFGfjx3tR0MGbwFqhgi4uFLT5BQ==
+length: 3031
 -->
