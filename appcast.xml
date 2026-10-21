@@ -4,24 +4,21 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>1.5</title>
-            <pubDate>Tue, 20 Oct 2026 18:02:26 -0500</pubDate>
+            <title>1.5.1</title>
+            <pubDate>Tue, 20 Oct 2026 20:31:03 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>13</sparkle:version>
-            <sparkle:shortVersionString>1.5</sparkle:shortVersionString>
+            <sparkle:version>14</sparkle:version>
+            <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Added
-- **Field differences:** the ZIA dry run shows, for each rule already in the tenant, every field where it differs from what the wizard would send (as the tenant has it → as the plan has it).
-- **Update in place:** a ZIA rule the wizard made that differs is updated to match (keeping its position and whether it's switched on), and so is the wizard's DLP engine when its dictionaries changed; a ZPA application segment with other destinations or ports gets the application's. Undo puts each back, unless someone changed it since. A switch on each Dry Run page leaves them as they are instead.
-- **Licences:** once connected, Home lists the tenant's licences against what a POV shows (missing core ones, optional ones, subscriptions ending within 21 days); Customize marks modules the tenant isn't licensed for and takes the Cloud Sandbox licence from the subscriptions.
-- **Check for Drift:** next to Undo for ZIA and ZPA runs, it reads back what the run created or updated and lists what was deleted, renamed or changed since. It changes nothing.
-- **Summary report:** from ZIA's Apply page, as Markdown or a printable page: the policy and its rules, this session's results in every module, licences, warnings and follow-ups. No keys or passwords are in it.
-- **Bulk Rule Manager** (⌘6): the tenant's ZIA rules (the wizard's by default) to delete in bulk, with ZPA's and ZDX's Manage lists beside them.
+            <description sparkle:format="markdown"><![CDATA[### Fixed
+- **ZPA:** a re-run whose plan only updates existing application segments can now be applied, and the Dry Run and Apply pages count updates as well as creates.
+- **ZIA:** an Apply whose only changes are rules or the DLP engine updated in place now activates them; before, they waited in ZIA until someone else activated.
+- **Crash fixes:** the app no longer closes when an address in a ZPA destination or a Client Connector list has digits other than 0-9 (Arabic-Indic or full-width ones, for example): it's refused as an invalid address. Nor when Client Connector or ZDX asks for a very long rate-limit wait (it reads "a long time"), or reports a device type that isn't a whole number.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.5/Zscaler-Policy-Wizard-1.5.dmg" length="12110902" type="application/octet-stream" sparkle:edSignature="sofZGwSIOiWbXzeNP07UWAnCTShEUomSCZIG/+cAmzdH9/q99TZC6hsjE/+PUxOZJE0PpXTfYyszMlKnXujfCQ=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v1.5.1/Zscaler-Policy-Wizard-1.5.1.dmg" length="12113890" type="application/octet-stream" sparkle:edSignature="ll1bbS+zqEwPLAQJ74QiGFfsfGTWdms74fxwUcu/58RB76LVhw1DhN8pwvRNt23bCANwpW+ZaQmTxm+67MyDAA=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: uStmu8sxQe7SSuhcs4M76ey6hDHhOVZETpLCsRhtGa+3vcpUpWDIq8hAFh4qViXi7Wo9+dVpEO+Nd7Tq8LVODw==
-length: 2684
+edSignature: 0bC/4CpGKC2IopDBKduLteWEeHjhM26iAHYXLv0FvFO6y/Ni1mynwmoY1uMruZaEEl5cW5kEZSA9hkZP+6ewAQ==
+length: 1972
 -->
