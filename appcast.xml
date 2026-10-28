@@ -4,24 +4,24 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>3.1</title>
-            <pubDate>Wed, 28 Oct 2026 16:43:57 -0500</pubDate>
+            <title>3.1.1</title>
+            <pubDate>Wed, 28 Oct 2026 18:00:12 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>22</sparkle:version>
-            <sparkle:shortVersionString>3.1</sparkle:shortVersionString>
+            <sparkle:version>23</sparkle:version>
+            <sparkle:shortVersionString>3.1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Added
-- **Policy Simulator, admin ranking:** when admin ranking is on in ZIA, the simulator now evaluates ZIA rules by admin rank first (0 is highest), then by rule order, as ZIA does. Each rule shows its rank, and the result says when rank put a rule with a lower order number behind the deciding rule, and whether that rule would otherwise have decided. Loading a tenant's policy also reads whether admin ranking is on; snapshots saved before this version are treated as off.
-- **Policy Simulator, Block it / allow it:** with admin ranking on, a new rule gets the admin rank of the rule it goes above (at the top, the first rule's), and the preview warns that the API client's admin role needs that rank to save it.
-- **Prove it:** also reads whether admin ranking is on, so its verdicts match the Policy Simulator's, and says when it couldn't read it.
-
-### Fixed
-- **Policy Simulator, Block it / allow it:** a snapshot file with a rule whose order is out of range no longer makes the preview quit the app.
+            <description sparkle:format="markdown"><![CDATA[### Fixed
+- **AI Guard, Undo:** undoing an update to the control rule now puts back only what Apply changed, so edits made in AI Guard since are kept.
+- **Private Access, Manage:** the ordered delete now treats a list ZPA answered oddly as unreadable and holds back the deletes that depend on it, instead of reading it as empty and calling an object unused.
+- **Undo after a lost answer:** when Private Access, Digital Experience or Zscaler didn't answer an update (a segment or rule updated in place, an app or probe switched on, a Policy Simulator change), it's now recorded so Undo can take it back. A new object with no answer is reported as possibly created.
+- **Client Connector, Devices & Install:** Disconnect, or switching to another tenant, now clears the values typed into the install builder, including passwords and the policy token.
+- **Undo and drift:** a run record whose created object points outside its own kind's list is no longer offered.
+- **Client Connector:** profile lists longer than one page are read in full, and a forwarding profile is deleted only once no app profile on any platform uses it (iOS, Android and Linux included).
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.1/Zscaler-Policy-Wizard-3.1.dmg" length="17309116" type="application/octet-stream" sparkle:edSignature="K2qpCdCqiRpA2WYCIwxSVD0hfj+K+Y+lhV46FHBlzFPL8pSFqbRvRvBwTwQixGOXrrkptWwSC6lo0extLkHmCg=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.1.1/Zscaler-Policy-Wizard-3.1.1.dmg" length="17330661" type="application/octet-stream" sparkle:edSignature="IOyU9hJRe9XDukruxlsb6sr68F4Q08JSFC2+lwMy1gvGOafJmhGKllWzr4Uxusq8Nag6tFffLa5fvHy4qd0mDQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: yQpX34LAj16f99gBL9kcstQJDlliET2sgUlHPEFOYNwgttajLllwO838XTaxaWitq6RIF6c8JdCIK1BfwYRFAQ==
-length: 2280
+edSignature: CpvZeGEK3EAbTFWiaWcy3nzKokAetpvtOXgoNHZpyyfvq1zFQalk6/9L+BUAAsatmWhIWwHhR+5vF8YiOcUqBg==
+length: 2432
 -->
