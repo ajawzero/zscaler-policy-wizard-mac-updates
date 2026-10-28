@@ -4,40 +4,24 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>3.0.1</title>
-            <pubDate>Wed, 28 Oct 2026 12:43:52 -0500</pubDate>
+            <title>3.1</title>
+            <pubDate>Wed, 28 Oct 2026 16:43:57 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>21</sparkle:version>
-            <sparkle:shortVersionString>3.0.1</sparkle:shortVersionString>
+            <sparkle:version>22</sparkle:version>
+            <sparkle:shortVersionString>3.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Changed
-- **SafeSearch apps:** when the tenant lists no SafeSearch apps, the dry run and Apply now show the ones Apply picks, and Apply stops if that list changed after the dry run. Undo says the list stays, because ZIA doesn't allow changing it while SafeSearch is off.
-- **Client Connector, tamper protection password:** a new one is made once an Apply sets one, and when you disconnect or switch tenant, so one tenant's password isn't offered again.
+            <description sparkle:format="markdown"><![CDATA[### Added
+- **Policy Simulator, admin ranking:** when admin ranking is on in ZIA, the simulator now evaluates ZIA rules by admin rank first (0 is highest), then by rule order, as ZIA does. Each rule shows its rank, and the result says when rank put a rule with a lower order number behind the deciding rule, and whether that rule would otherwise have decided. Loading a tenant's policy also reads whether admin ranking is on; snapshots saved before this version are treated as off.
+- **Policy Simulator, Block it / allow it:** with admin ranking on, a new rule gets the admin rank of the rule it goes above (at the top, the first rule's), and the preview warns that the API client's admin role needs that rank to save it.
+- **Prove it:** also reads whether admin ranking is on, so its verdicts match the Policy Simulator's, and says when it couldn't read it.
 
 ### Fixed
-- **CIPA:** Apply turns on CIPA Compliance without also sending the settings it turns on and keeps on itself (SafeSearch, Suspicious New Domains Lookup, AI/ML-based Content Categorization, Embedded Sites Categorization). Zscaler's SDKs never send those alongside it. Undo leaves those settings alone while CIPA Compliance stays on.
-- **ZIA settings:** sometimes a settings change timed out on its first try, and then ZIA refused the second try (or you pressed Stop in between). That change is now kept for Undo and reported as possibly made. Before, it was dropped, or for Advanced Threat Protection it was mistaken for a feature flag.
-- **ZIA Undo, SSL Inspection:** Undo now leaves alone an SSL Inspection rule whose action was changed in the ZIA portal after Apply, and says which setting changed, instead of overwriting it. A setting ZIA reset itself when Apply updated the rule doesn't count as a change.
-- **ZIA Undo:** Undo now refuses a damaged run record that would switch a rule off or move it.
-- **Check for Drift:** no longer says No drift when some objects couldn't be read. Objects that are only checked for being there are counted on the same line.
-- **Summary report and Bulk Test:** the Markdown summary report keeps every tenant name and message on one line. A bulk test CSV cell that contains a line break now stays in its own row.
-- **Client Connector:** running the wizard again with a new forwarding profile now links the wizard's app profile to it, even when the app profile already had every other setting.
-- **Client Connector:** an app profile that comes back empty or unreadable now stops the dry run instead of being planned as an update of every setting.
-- **Client Connector:** Undo and Apply's clean-up no longer delete a forwarding profile, or count a profile as removed, when Client Connector's profile list comes back empty, unreadable or with entries that aren't profiles; they stop and say which list couldn't be read. The dry run stops on such a list too.
-- **Client Connector:** a forwarding profile whose creation got no answer is now looked up and kept on the run's record, so Undo can remove it; an update without an answer now says it may have gone through. A forwarding or app profile found by name, when Client Connector doesn't confirm a create or doesn't return its ID, is kept on the record only when it's the only one of that name and holds what the run sent, so Undo never removes one someone else made under the same name.
-- **Client Connector Manage:** a forwarding profile is deleted only when both platforms' app profile lists were read.
-- **Client Connector install:** the script keeps `!` in values however Command Prompt is set up; Copy Command says it's for Command Prompt and is off when a value has `%` or `!`, which it would change (use Save Script…). A value with an invisible character is refused, and the installer's file name loses line breaks and invisible characters, so a pasted value can't end a quote or a line in the script.
-- **Reports, exports and the install script:** text with invisible or combining characters can no longer add links or formatting to the Markdown report, end a quote in the HTML report, split a row or start a formula in an exported CSV, or end a quote in the install command or script.
-- **Private Access dry run:** when the tenant's policy rules can't be read, or come back incomplete, the wizard's rule is left out, as the warning says, instead of being planned as a second rule with the same name.
-- **Private Access dry run:** a Browser Access or Privileged Remote Access host that is also one of the run's own applications on overlapping ports now fails the dry run instead of failing at Apply. An application the run updates now counts with its new destinations and ports, so its old ones no longer cause a false failure.
-- **Private Access Undo:** an application segment or policy rule a run updated gets back only its old destinations and ports, or its old applications. Changes made in the ZPA portal since (a segment switched off or moved, a rule's action or timeouts) are kept. A rule given its own conditions (including negated or regrouped ones), App Connector groups or server groups since, or switched off, is left as it is, with a note. A re-run also no longer adds applications to such a rule, which the update would have undone; the dry run says which to add in the ZPA portal.
-- **Private Access Undo and Check for Drift:** a run record whose objects' paths aren't the ones Apply wrote is refused, and Undo no longer deletes an object it can't confirm by name.
-- **Private Access Check for Drift:** no longer marks every rule a re-run updated as changed, and it now reports conditions, App Connector groups or server groups added to such a rule since, or the rule switched off.
+- **Policy Simulator, Block it / allow it:** a snapshot file with a rule whose order is out of range no longer makes the preview quit the app.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.0.1/Zscaler-Policy-Wizard-3.0.1.dmg" length="17268716" type="application/octet-stream" sparkle:edSignature="KN9ocTENENbe5CzUojR/Qlj1wkSGA9uBiGt6lMc7pedztbnIlgXj6zGvnGPRoAcPD9k3sA4yODC8p6UgCxAkDw=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.1/Zscaler-Policy-Wizard-3.1.dmg" length="17309116" type="application/octet-stream" sparkle:edSignature="K2qpCdCqiRpA2WYCIwxSVD0hfj+K+Y+lhV46FHBlzFPL8pSFqbRvRvBwTwQixGOXrrkptWwSC6lo0extLkHmCg=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: xiL96yD4uu+a9Xb9axCqdZZZs4FkzdFzPAZ04Hr+x/9WaWSyE0/Q5y9ekL1SCI3pJQCgwc1CTgxxxR5k6ctkBw==
-length: 6536
+edSignature: yQpX34LAj16f99gBL9kcstQJDlliET2sgUlHPEFOYNwgttajLllwO838XTaxaWitq6RIF6c8JdCIK1BfwYRFAQ==
+length: 2280
 -->
