@@ -4,40 +4,40 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>3.0</title>
-            <pubDate>Mon, 26 Oct 2026 12:58:16 -0500</pubDate>
+            <title>3.0.1</title>
+            <pubDate>Wed, 28 Oct 2026 12:43:52 -0500</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>20</sparkle:version>
-            <sparkle:shortVersionString>3.0</sparkle:shortVersionString>
+            <sparkle:version>21</sparkle:version>
+            <sparkle:shortVersionString>3.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Added
-- **Tenant Readiness › API access:** checks which products the API client can use and whether its role in ZIA, Private Access and Client Connector allows what the app writes, naming any missing or read-only permission and where to fix it.
-- **Tenant Readiness › Prerequisites:** the core ZIA features every POV shows (URL Filtering, Cloud App Control, File Type Control, Advanced Threat Protection, Cloud Firewall, DNS Security, SSL Inspection, malware protection) are checked right after API access; one that isn't licensed is shown in red with the subscription to add to the trial. Home and the summary report list them too.
-- **Licence editions:** readiness, Customize and the summary report now say which editions the tenant has (Cloud Firewall Standard or Advanced, DNS tunnel detection, Sandbox Standard or Advanced, Data Protection, Browser Isolation), and readiness shows its ZDX tier.
-- **Licences on this tenant:** the full list of the tenant's subscriptions, with what each one is and unlocks, saved as CSV or opened to print.
-- **Cloud Firewall Standard:** on a tenant with the standard Cloud Firewall, the geo-blocking rules now match by port (SSH, FTP, Telnet, SMB and an RDP service the app creates) and the QUIC rule by its service; the application-based firewall rules and DNS tunnel detection, which need Advanced Cloud Firewall, are left out and listed. Pick the edition on Customize.
-- **ZPA Manage, ordered delete:** see what uses each object, preview the delete, and delete in the order ZPA needs. Anything still used by an object you didn't pick is held back (Select It Too picks it), and an App Connector Group waits until each provisioning key ZPA would delete with it is picked too; a segment leaves the wizard's segment group first; ZPA is read again before deleting and nothing is deleted if a picked object changed, and a failed delete skips what depended on it.
-- **Policy Simulator, multiple rules match:** a result now lists the later rules that also match the traffic. The first one decides, so they don't apply, but they show overlapping or shadowed policy; any that would act differently is marked, and catch-all and default rules are counted. Covered: URL Filtering, Firewall, DNS Control, SSL Inspection, Cloud App Control, Sandbox, File Type Control, Private Access access policy and Cloud & Branch Connector forwarding. Every module shows each one's list, and Bulk Test's CSV has an Also matched column.
-- **Prove it, for every kind of web test:** URL filtering, threat protection (EICAR and AMTSO), a cloud app, the firewall (destination, port and protocol) and DNS (including DNS over HTTPS), checked the way the Policy Simulator does it, with a Prove It button on each runbook test and the last hour's threat and firewall totals from Z-Insights. On POV Tests and each Active POV's page.
-- **POV test kit:** POV Tests now offers only what the POV covers: DLP test data for its market (healthcare, financial services, education, public sector or generic personal data), with valid check digits on provider, DEA, routing and card numbers; links to the EICAR and AMTSO malware test pages; and a harmless PDF for Cloud Sandbox, new every time, that says what the POV's Sandbox rules will do with it.
-- **AI Guard:** a new ZIA page (and a POV Start product) that sends the AI apps through ZIA inspection to AI Guard, following Zscaler's integration guide: it uploads the AI Guard CA, creates the proxy, destination group, QUIC block, an SSL Inspect rule above Microsoft 365's bypass and the forwarding rule (the proxy gateway is one step in the ZIA portal), allows the sanctioned AI apps in ZIA, and sets a compliance profile in AI Guard (HIPAA, HITRUST, PCI DSS, GDPR, CJIS, FERPA, SOX, NIST 800-171, NIST 800-53 or General; Monitor or Block). Prompt capture is opt-in. Dry run first, Apply after review, Undo after; the certificate file is never saved.
-- **Several tenants at once:** on a POV's page, add its tenant's API key and switch to it while the tenant you were in stays signed in. Those keys are kept in memory only, never saved, and are forgotten after 12 hours unused. Opening a POV switches to its tenant when its key is held; Connect lists the keys held, and Disconnect signs out of the current tenant only.
-- **ZDX licence tiers:** the ZDX tier comes from the tenant's subscriptions (or pick it); templates and apps the tier doesn't include are marked Not Licensed, and a new ZDX Standard POV template fits ZDX Standard.
-
-### Changed
-- **ZTH Ebook:** a caution page for AI and ML sites is back, now on the AI and ML category.
-- **Cloud Sandbox licence:** Advanced now needs the Sandbox Advanced subscription; Advanced Threat Protection brings Standard. Tenants with Sandbox Standard or Advanced Threat Protection but not Sandbox Advanced now start on the Standard rules (you can still pick Advanced on Customize).
-- **Customize:** a policy module the tenant isn't licensed for now starts switched off, with a note; switch it back on to include it anyway.
-- **Policy Simulator, workloads:** a Cloud or Branch Connector rule that drops the traffic is now always the result, even if a rule above it might match instead; the connector's conditions are listed when Private Access decides or the connector bypasses Zscaler, and a connector rule that sends traffic direct reads as a bypass.
-- **DLP test data:** the sample ICD-10 code `I10.0`, which isn't a valid code, is now `I10`; the magnetic-stripe samples are gone.
+            <description sparkle:format="markdown"><![CDATA[### Changed
+- **SafeSearch apps:** when the tenant lists no SafeSearch apps, the dry run and Apply now show the ones Apply picks, and Apply stops if that list changed after the dry run. Undo says the list stays, because ZIA doesn't allow changing it while SafeSearch is off.
+- **Client Connector, tamper protection password:** a new one is made once an Apply sets one, and when you disconnect or switch tenant, so one tenant's password isn't offered again.
 
 ### Fixed
-- Readiness no longer flags an SSL Inspect rule limited to destination IP groups as one that inspects everything.
+- **CIPA:** Apply turns on CIPA Compliance without also sending the settings it turns on and keeps on itself (SafeSearch, Suspicious New Domains Lookup, AI/ML-based Content Categorization, Embedded Sites Categorization). Zscaler's SDKs never send those alongside it. Undo leaves those settings alone while CIPA Compliance stays on.
+- **ZIA settings:** sometimes a settings change timed out on its first try, and then ZIA refused the second try (or you pressed Stop in between). That change is now kept for Undo and reported as possibly made. Before, it was dropped, or for Advanced Threat Protection it was mistaken for a feature flag.
+- **ZIA Undo, SSL Inspection:** Undo now leaves alone an SSL Inspection rule whose action was changed in the ZIA portal after Apply, and says which setting changed, instead of overwriting it. A setting ZIA reset itself when Apply updated the rule doesn't count as a change.
+- **ZIA Undo:** Undo now refuses a damaged run record that would switch a rule off or move it.
+- **Check for Drift:** no longer says No drift when some objects couldn't be read. Objects that are only checked for being there are counted on the same line.
+- **Summary report and Bulk Test:** the Markdown summary report keeps every tenant name and message on one line. A bulk test CSV cell that contains a line break now stays in its own row.
+- **Client Connector:** running the wizard again with a new forwarding profile now links the wizard's app profile to it, even when the app profile already had every other setting.
+- **Client Connector:** an app profile that comes back empty or unreadable now stops the dry run instead of being planned as an update of every setting.
+- **Client Connector:** Undo and Apply's clean-up no longer delete a forwarding profile, or count a profile as removed, when Client Connector's profile list comes back empty, unreadable or with entries that aren't profiles; they stop and say which list couldn't be read. The dry run stops on such a list too.
+- **Client Connector:** a forwarding profile whose creation got no answer is now looked up and kept on the run's record, so Undo can remove it; an update without an answer now says it may have gone through. A forwarding or app profile found by name, when Client Connector doesn't confirm a create or doesn't return its ID, is kept on the record only when it's the only one of that name and holds what the run sent, so Undo never removes one someone else made under the same name.
+- **Client Connector Manage:** a forwarding profile is deleted only when both platforms' app profile lists were read.
+- **Client Connector install:** the script keeps `!` in values however Command Prompt is set up; Copy Command says it's for Command Prompt and is off when a value has `%` or `!`, which it would change (use Save Script…). A value with an invisible character is refused, and the installer's file name loses line breaks and invisible characters, so a pasted value can't end a quote or a line in the script.
+- **Reports, exports and the install script:** text with invisible or combining characters can no longer add links or formatting to the Markdown report, end a quote in the HTML report, split a row or start a formula in an exported CSV, or end a quote in the install command or script.
+- **Private Access dry run:** when the tenant's policy rules can't be read, or come back incomplete, the wizard's rule is left out, as the warning says, instead of being planned as a second rule with the same name.
+- **Private Access dry run:** a Browser Access or Privileged Remote Access host that is also one of the run's own applications on overlapping ports now fails the dry run instead of failing at Apply. An application the run updates now counts with its new destinations and ports, so its old ones no longer cause a false failure.
+- **Private Access Undo:** an application segment or policy rule a run updated gets back only its old destinations and ports, or its old applications. Changes made in the ZPA portal since (a segment switched off or moved, a rule's action or timeouts) are kept. A rule given its own conditions (including negated or regrouped ones), App Connector groups or server groups since, or switched off, is left as it is, with a note. A re-run also no longer adds applications to such a rule, which the update would have undone; the dry run says which to add in the ZPA portal.
+- **Private Access Undo and Check for Drift:** a run record whose objects' paths aren't the ones Apply wrote is refused, and Undo no longer deletes an object it can't confirm by name.
+- **Private Access Check for Drift:** no longer marks every rule a re-run updated as changed, and it now reports conditions, App Connector groups or server groups added to such a rule since, or the rule switched off.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.0/Zscaler-Policy-Wizard-3.0.dmg" length="17170399" type="application/octet-stream" sparkle:edSignature="WYdJs8i4pvGxN7TaEwwAjhH5v5HM7Swnjt3PYyVQi64DXzgT+5Mrna2nCEWMuHuSPhQhTEBvqYm/VcZlP44vCg=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.0.1/Zscaler-Policy-Wizard-3.0.1.dmg" length="17268716" type="application/octet-stream" sparkle:edSignature="KN9ocTENENbe5CzUojR/Qlj1wkSGA9uBiGt6lMc7pedztbnIlgXj6zGvnGPRoAcPD9k3sA4yODC8p6UgCxAkDw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: /D3M3eufaj/JqWZXr01st1WdDpcSUuPSegODaTK4TRAIFBI+Vd/3T8VLnLL+/sQps2Vi/rkSnin8ZsX0rtimBw==
-length: 6872
+edSignature: xiL96yD4uu+a9Xb9axCqdZZZs4FkzdFzPAZ04Hr+x/9WaWSyE0/Q5y9ekL1SCI3pJQCgwc1CTgxxxR5k6ctkBw==
+length: 6536
 -->
