@@ -4,20 +4,32 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Zscaler Policy Wizard</title>
         <item>
-            <title>3.4.1</title>
-            <pubDate>Mon, 09 Nov 2026 20:48:28 -0600</pubDate>
+            <title>3.4.2</title>
+            <pubDate>Thu, 26 Nov 2026 23:56:21 -0600</pubDate>
             <link>https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/latest</link>
-            <sparkle:version>31</sparkle:version>
-            <sparkle:shortVersionString>3.4.1</sparkle:shortVersionString>
+            <sparkle:version>32</sparkle:version>
+            <sparkle:shortVersionString>3.4.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[### Fixed
-- **Client Connector, macOS best practice profile:** it no longer sets an app profile PAC file. Zscaler's hosted recommended PAC file it used sent Mac traffic the wrong way. Running the wizard again on a macOS profile it made earlier shows **PAC URL** as a change and clears it.
-- **Client Connector, macOS matches Windows:** the macOS profile now has the same settings as the Windows one wherever macOS has them. It gets the same six bypass apps (Microsoft 365, SharePoint and Exchange as well as Teams, Zoom and Azure Virtual Desktop), the Zscaler CLI, and the warning 30 minutes before ZPA sign-in expires. Three settings now stay at the portal's defaults instead of being turned off: locking traffic down when the tunnel process exits, putting DNS exclusions first, and automatic packet capture. A profile updated in place gets these as well.
+            <description sparkle:format="markdown"><![CDATA[This is the last update to Zscaler Policy Wizard. It's replaced by **zPolicy Wizard 4.0**, one app for macOS and
+Windows that does everything 3.4 does.
+
+### What to do
+- **On macOS 15 or later:** [download zPolicy Wizard](https://github.com/ajawzero/zpolicy-wizard-updates/releases/latest/download/zPolicy-Wizard.dmg), drag it to Applications and open it. It asks once
+  whether to copy this app's run records, Config Drift reads, POVs and POV templates, so you can still undo 3.x runs and
+  pick up your POVs. Your vanity domain, cloud and client ID fill in Connect. Enter your client secret once more: it
+  isn't copied.
+- **On macOS 13 or 14:** keep using this app. It keeps working as it does today, but gets no more updates.
+- You can keep both apps for a while: zPolicy Wizard never changes this app's files or settings.
+
+### Notes
+- zPolicy Wizard, like this app, isn't an official Zscaler tool: it's built by a Zscaler SE to help SEs and Zscaler
+  practitioners.
+- Nothing else changes in this update.
 ]]></description>
-            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.4.1/Zscaler-Policy-Wizard-3.4.1.dmg" length="21996960" type="application/octet-stream" sparkle:edSignature="VKPIfdG/Xceca9VMg8pRlhh7lWP5pLYlRBqVcUEqJsRKHnFIpehCzPPRQ6t5FCmbYBQ7NU1Qp6QFuVbG9X/jBQ=="></enclosure>
+            <enclosure url="https://github.com/ajawzero/zscaler-policy-wizard-mac-updates/releases/download/v3.4.2/Zscaler-Policy-Wizard-3.4.2.dmg" length="22000344" type="application/octet-stream" sparkle:edSignature="sxPhNBJmTV0HTmjblxz5uo560bhgkReQEw7UIAumawIguS4Bb7EaMoXZwn3L2m/YKP+pj8uO4k0UH0gtpY62Bw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: r8QHlwL7c6NG1VCBa3ZY900dsMIQf/AWYY/2xzgxiFaO18TWYCflBInUF02ArDn1EKnMVj1mcg/DbHCYUmhgBw==
-length: 2132
+edSignature: OqjCZBidoyz6Y04Axw0e5/GtZY2vwfPFS7Xyw3Os1ieKc0w7b5zNqPFYK0/wYSQInxjVRFI5JXHvIGsPS5DYCg==
+length: 2285
 -->
